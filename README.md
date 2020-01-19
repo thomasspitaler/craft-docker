@@ -14,6 +14,8 @@ Copy the files provided in this repository into your Craft cms project.
 
 The ports exposed by the containers on localhost can be configured in `docker-compose.yaml`.
 
+Database credentials can be configured in that file as well.
+
 ## Running the Containers
 
 Run `docker-compose up` to start the containers.
