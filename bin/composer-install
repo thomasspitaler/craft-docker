@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+id=$(docker ps -aqf "name=docker-php-fpm")
+docker exec -t $id composer install -d /var/www/awob-website
