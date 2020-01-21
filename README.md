@@ -26,7 +26,7 @@ By default, `nginx` can be reached at `http://localhost:8080`.
 
 By default, `PostgreSQL` exposes port `5433` on localhost.
 
-See section `Configuration` above on how to change these ports.
+See section [Configuration](#configuration) above on how to change these ports.
 
 ## Scripts
 
