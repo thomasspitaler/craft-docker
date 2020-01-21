@@ -34,4 +34,6 @@ The following scripts are provided to facilitate managing the `php-fpm` containe
 
 - `bin/bash`: opens a shell within the `php-fpm` container
 
-- `bin/composer-install`: runs `composer install` within the `php-fpm` container and in the project directory (where `composer.json` is usually located).
+- `bin/composer`: runs `composer` within the `php-fpm` container and in the project directory (where `composer.json` is usually located).
+
+    For example, `bin/composer install` will install packages.
