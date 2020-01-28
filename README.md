@@ -1,6 +1,6 @@
 # craft-docker
 
-Docker setup for Craft cms (or any web project with similar requirements).
+Docker setup for [Craft cms](https://craftcms.com/), or any web project with similar requirements.
 
 Files will be served from your project's `web` directory.
 
