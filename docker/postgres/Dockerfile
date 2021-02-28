@@ -1,1 +1,2 @@
-FROM postgres:9.6
+ARG TAG
+FROM postgres:"${TAG}"

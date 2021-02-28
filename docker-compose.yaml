@@ -12,7 +12,11 @@ services:
     # i.e. where the Dockerfile of the service is located
     # all paths are relative to the location of docker-compose.yml
     build:
+      args:
+        TAG: ${DOCKER_PHP_FPM_TAG:-fpm}
+        POSTGRESQL_CLIENT_VERSION: ${DOCKER_PHP_FPM_POSTGRESQL_CLIENT_VERSION:-12}
       context: ./docker/php-fpm
+
     # reserve a tty - otherwise the container shuts down immediately
     # corresponds to the "-i" flag
     tty: true
@@ -30,7 +34,7 @@ services:
     # defines the port mapping
     # corresponds to the "-p" flag
     ports:
-      - "8080:80"
+      - "${DOCKER_NGINX_EXPOSE_PORT:-8080}:80"
     tty: true
     volumes:
       - ./web:/var/www/craft-site/web
@@ -40,12 +44,14 @@ services:
 
   docker-postgres:
     build:
+      args:
+        TAG: ${DOCKER_POSTGRES_TAG:-12}
       context: ./docker/postgres
-    ports:
-      - "5433:5432"
     environment:
-      POSTGRES_USER: dev
-      POSTGRES_PASSWORD: dev
-      POSTGRES_DB: craft_site
+      POSTGRES_DB: ${DOCKER_POSTGRES_DATABASE:-craft_site}
+      POSTGRES_USER: ${DOCKER_POSTGRES_USER:-dev}
+      POSTGRES_PASSWORD: ${DOCKER_POSTGRES_PASSWORD:-dev}
+    ports:
+      - "${DOCKER_POSTGRES_EXPOSE_PORT:-5432}:5432"
     networks:
       - web-network
