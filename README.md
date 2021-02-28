@@ -6,7 +6,7 @@ Files will be served from your project's `web` directory.
 
 [docker-compose](https://docs.docker.com/compose/) is used to orchestrate 3 containers based on `nginx`, `php-fpm`, and `PostgreSQL`.
 
-The `php-fpm` container also includes a postgres client as well as the Google Cloud SDK to facilitate backing up to and restoring from google cloud storage. See [thomasspitaler/craft-scripts](https://github.com/thomasspitaler/craft-scripts) for scripts to backup and restore the Craft cms database and assets.
+The `php-fpm` container also includes a postgres client as well as the Google Cloud SDK to facilitate backing up to and restoring from Google Cloud Storage. See [thomasspitaler/craft-scripts](https://github.com/thomasspitaler/craft-scripts) for scripts to backup and restore the Craft cms database and assets.
 
 ## Installation
 
